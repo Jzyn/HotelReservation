@@ -3,7 +3,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+GET     /                           controllers.HomeController.index()
 
 # rooms accepts a parameter default to 0 (Long)
 GET     /rooms             controllers.HomeController.rooms(gen:Long ?=0L)

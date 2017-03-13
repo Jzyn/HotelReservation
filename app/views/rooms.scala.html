@@ -1,10 +1,11 @@
-
+@(rooms: List[models.Room], hotels: List[models.Hotel], user: models.users.User)
 <!-- Pass page title and content {html between braces} to the main view -->
-@main("hotels") {
+@main("Rooms", user) {
     <!-- HTML content for the index view -->
+	<h4> Hotels </h4>
     <a href="@routes.HomeController.rooms(0)" >All Hotels</a>
 
-    <h4> Hotels </h4>
+    
         <!-- Start of For loop - For each h in hotels add a list item -->
         <!-- Also show the number of rooms in each hotel -->
     @for(h <- hotels) {

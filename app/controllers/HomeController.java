@@ -16,8 +16,13 @@ public class HomeController extends Controller {
         this.formFactory = f;
     }
 
-    public static Result index() {
-        return ok(index.render("Your new application is ready."));
+       private User getUserFromSession(){
+        return User.getUserById(session().get("email"));
+    }
+
+
+        public Result index() {
+        return ok(index.render(getUserFromSession()));
     }
 
     public Result rooms(Long hot) {
@@ -31,7 +36,7 @@ public class HomeController extends Controller {
             roomsList = Hotel.find.ref(hot).getRooms();
         }
 
-        return ok(rooms.renderroomsList, hotelsList));
+        return ok(rooms.renderroomsList, hotelsList, getUserFromSession()));
     }
 }
 
