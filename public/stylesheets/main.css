@@ -1,0 +1,36 @@
+nav{
+    background-image: url("../images/nav.png");
+    height: 50px;
+}
+nav img {
+    height:28px;
+    width:28px;
+}
+
+form{
+    padding: 10px;
+    width: 320px;
+    margin-top:25px;
+    margin-right:100px;
+    float: right;
+}
+
+input #search{
+    background-size: contain;
+    border-style: ridge;
+}
+
+#container{
+    background-color: chartreuse;
+    margin-top: 5%;
+    width: 30%;
+    height: 180px;
+    color: black;
+
+}
+
+#container img{
+    float:left;
+    margin-right: 5px;
+
+}

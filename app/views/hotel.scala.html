@@ -1,0 +1,41 @@
+
+<!-- Pass page title and content {html between braces} to the main view -->
+@main("hotels") {
+    <!-- HTML content for the index view -->
+    <a href="@routes.HomeController.rooms(0)" >All Hotels</a>
+
+    <h4> Hotels </h4>
+        <!-- Start of For loop - For each h in hotels add a list item -->
+        <!-- Also show the number of rooms in each hotel -->
+    @for(h <- hotels) {
+        <a href="@routes.HomeController.rooms(h.getId)"> @h.getName
+	@h.getAddress @h.getRooms.size 
+        </a>
+    }
+
+            <table >
+                <thead>
+                        <!-- The header row-->
+                    <tr>
+                        <th>ID</th>
+                        <th>Description</th>
+                        <th>Hotel</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <!-- Movie row(s) -->
+                        <!-- Start of For loop - For each m in movies add a row -->
+                    @for(r <- rooms) {
+                        <tr>
+                            <td>@r.getId</td>
+                            <td>@r.getDescription</td>
+                            <td>@r.getHotel.getName</td>
+                            <td>&euro; @("%.2f".format(r.getPrice))</td>
+                        </tr>
+                    } <!-- End of For loop -->
+                </tbody>
+            </table>
+
+        <!-- End of content for main -->
+}
